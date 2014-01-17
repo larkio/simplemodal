@@ -238,7 +238,8 @@
 				return false;
 			}
 
-			browser.ieQuirks = browser.msie && !browser.boxModel;
+			//browser.ieQuirks = browser.msie && !$.support.boxModel;
+			browser.ieQuirks = browser.msie && (document.compatMode === "BackCompat");
 
 			// merge defaults and user options
 			s.o = $.extend({}, $.modal.defaults, options);
